@@ -1,0 +1,22 @@
+$global-max-width: 933px;
+$global-max-height: 312px;
+$global-min-width: 300px;
+$global-min-height: 200px;
+$global-background-color: rgb(231, 210, 210);
+
+@mixin global-font {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+}
+
+@mixin global-font-bold {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+}

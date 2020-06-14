@@ -1,0 +1,113 @@
+.form {
+    display: grid;
+    padding: 1.5rem 3rem 1.5rem 3rem;
+    grid-column-gap: 0.8rem;
+    grid-row-gap: 0.8rem;
+    background-color: white;
+    
+    >* {
+        align-self: center;
+    }
+    
+    .checkbox1{
+        grid-area: checkbox1;
+        >*{
+            @include global-font-bold;
+        }
+    }
+    
+    .checkbox2{
+        grid-area: checkbox2;
+        >*{
+            @include global-font-bold;
+        }
+    }
+
+    .onde{
+        grid-area: onde;
+    }
+    .raio{
+        grid-area: raio;
+    }
+    .marca{
+        grid-area: marca;
+    }
+    .modelo{
+        grid-area: modelo;
+    }
+    .ano{
+        grid-area: ano;
+    }
+    .preco{
+        grid-area: preco;
+    }
+    .versao{
+        grid-area: versao;
+    }
+    .busca-avancada{
+        grid-area: busca-avancada;
+        cursor: pointer;
+        align-self: center;
+        font-weight: bold;
+        display:flex;
+        align-items: center;
+        color: rgb(228, 10, 10);
+    }
+    .limpar-filtros{
+        grid-area: limpar-filtros;
+        align-self: center;
+        cursor: pointer;
+        font-size: 11px;
+        color: rgb(165, 162, 162);
+        text-align: center;
+    }
+    .ver-ofertas{
+        grid-area: ver-ofertas;
+        background-color: rgb(228, 10, 10);
+        color: white;
+        border: none;
+        border-radius: 0.2rem;
+        height: 100%;
+    }
+
+    @media (max-width: 499px) {
+        grid-template-rows: repeat(10, 2rem) 35px;
+        grid-template-areas:
+            "checkbox1 checkbox2"
+            "onde onde"
+            "raio raio"
+            "marca marca"
+            "modelo modelo"
+            "ano ano"
+            "preco preco"
+            "versao versao"
+            "busca-avancada busca-avancada"
+            "limpar-filtros limpar-filtros"
+            "ver-ofertas ver-ofertas"
+            ;
+    }
+    @media (min-width: 500px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1rem repeat(5, 2rem) 35px;
+        grid-template-areas:
+            "checkbox1 checkbox2 . ."
+            "onde onde onde raio"
+            "marca marca modelo modelo"
+            "ano ano preco preco"
+            "versao versao versao versao"
+            "busca-avancada busca-avancada . ."
+            "limpar-filtros ver-ofertas ver-ofertas ver-ofertas"
+            ;
+    }
+
+    @media (min-width: 700px) {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 1rem repeat(2, 2rem) 35px;
+        grid-template-areas:
+            "checkbox1 checkbox2 . . . . . ."
+            "onde onde onde raio marca marca modelo modelo"
+            "ano ano preco preco versao versao versao versao"
+            "busca-avancada busca-avancada . . limpar-filtros ver-ofertas ver-ofertas ver-ofertas"
+            ;
+    }
+}

@@ -1,0 +1,30 @@
+.selectBox {
+    display: flex;
+    background-color: white;
+    border: 1px solid #b83838;
+    border-radius: 0.1rem;
+    height: 1.8rem;
+
+    label{
+        align-self: center;
+        padding-left: 0.5rem;
+        flex-basis: 1;
+    }
+    
+    select{
+        align-self: stretch;
+        border: none;
+        outline: none;
+        flex-basis: 0;
+        flex-grow: 1;
+        margin:0.1px;
+        @include global-font-bold;
+
+        option{
+            border: none;
+            outline: none;
+            padding: 0.5rem;
+            margin: 1rem;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.cabecalho{
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    img{
+        height: 1.7rem;
+        transition: transform 1s;
+
+        &:hover{
+            transform: translateY(10px);
+        }
+    }
+
+    @media (max-width: 499px) {
+        text-align: center;
+        height: 2.5rem;
+    }
+
+    @media (min-width: 500px) {
+        height: 2.5rem;
+    }
+}

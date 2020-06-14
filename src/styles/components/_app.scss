@@ -1,0 +1,27 @@
+body, html {
+    height: 100%;
+    
+    >*{
+        @include global-font;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+.content{
+    padding: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.app{
+    min-width: $global-min-width;
+    min-height: $global-min-height;
+    max-width: $global-max-width;
+    max-height: $global-max-height;
+    background-color: $global-background-color;
+    overflow: auto;
+}
