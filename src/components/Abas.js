@@ -11,12 +11,12 @@ const Abas = (props) =>
           <div className="content">
             <div className="tabs">
             <button className={`tabs-button tabs-button1 ${value === 0 ? "tabs-button-active" : ""}`} onClick={() => setValue(0)}>
-                <img className="icon" src={CarroIcon}/>
+                <img className="icon" draggable="false" src={CarroIcon}/>
                 <div className="span-1">{CarroText1}</div>
                 <div className="span-2">{CarroText2}</div>
             </button>
             <button className ={`tabs-button tabs-button2 ${value === 1 ? "tabs-button-active" : ""}`} onClick={() => setValue(1)}>
-                <img className="icon" src={MotoIcon}/>
+                <img className="icon" draggable="false" src={MotoIcon}/>
                 <div className="span-1">{MotoText1}</div>
                 <div className="span-2">{MotoText2}</div>
             </button> 

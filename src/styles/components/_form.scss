@@ -25,9 +25,7 @@
 
     .onde{
         grid-area: onde;
-    }
-    .raio{
-        grid-area: raio;
+        align-self: stretch;
     }
     .marca{
         grid-area: marca;
@@ -71,11 +69,11 @@
     }
 
     @media (max-width: 499px) {
-        grid-template-rows: repeat(10, 2rem) 35px;
+        grid-template-rows: 1rem repeat(9, 2rem) 35px;
         grid-template-areas:
             "checkbox1 checkbox2"
             "onde onde"
-            "raio raio"
+            "onde onde"
             "marca marca"
             "modelo modelo"
             "ano ano"
@@ -91,7 +89,7 @@
         grid-template-rows: 1rem repeat(5, 2rem) 35px;
         grid-template-areas:
             "checkbox1 checkbox2 . ."
-            "onde onde onde raio"
+            "onde onde onde onde"
             "marca marca modelo modelo"
             "ano ano preco preco"
             "versao versao versao versao"
@@ -105,7 +103,7 @@
         grid-template-rows: 1rem repeat(2, 2rem) 35px;
         grid-template-areas:
             "checkbox1 checkbox2 . . . . . ."
-            "onde onde onde raio marca marca modelo modelo"
+            "onde onde onde onde marca marca modelo modelo"
             "ano ano preco preco versao versao versao versao"
             "busca-avancada busca-avancada . . limpar-filtros ver-ofertas ver-ofertas ver-ofertas"
             ;

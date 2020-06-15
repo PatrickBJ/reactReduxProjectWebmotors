@@ -51,10 +51,10 @@
 
     .tabs-button-active{
         font-weight: bold;
-        border-bottom: 2px solid #b90101;
+        border-bottom: 2px solid $global-red-color;
 
         .span-2{
-            color: #b90101;
+            color: $global-red-color;
         }
     }
 }

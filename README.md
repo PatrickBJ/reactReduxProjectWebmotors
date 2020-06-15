@@ -1,5 +1,5 @@
-Projeto front end teste com a utilização das tecnologias 
-React, redux, thuck, axios, grid layout e sass.
+Projeto webmotors front end com a utilização das tecnologias 
+React, redux, thunck, axios, grid layout e sass.
 
 Consulta de webservice para comboBox em cascata.
 

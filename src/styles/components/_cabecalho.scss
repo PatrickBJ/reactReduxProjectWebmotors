@@ -1,11 +1,32 @@
 .cabecalho{
     padding: 0.5rem 0.5rem 0 0.5rem;
-    img{
-        height: 1.7rem;
-        transition: transform 1s;
 
+    .animacao-hover{
+        width: 150px;
         &:hover{
-            transform: translateY(10px);
+            animation: hover-animation 2s forwards;
+            @keyframes hover-animation {
+                100%{transform: translateY(0px);}
+                50%{transform: translateY(10px);}
+                100%{transform: translateY(0px);}
+            }
+        }
+    }
+
+    .animacao-inicial{
+        width: 150px;        
+        animation: initial-animation 1s ease-out forwards; 
+        transform-origin: right;
+     
+        @keyframes initial-animation {
+            0%  { transform: scale(1,1) translateX(300px); }
+            25% { transform: scale(1,1) translateX(0px); }
+            35% { transform: scale(0.9,1.03) translateX(-17px); }
+            45% { transform: scale(0.85,1.06) translateX(-27px); }
+            55% { transform: scale(0.8,1.09) translateX(-37px); }
+            65% { transform: scale(0.85,1.06) translateX(-27px); }
+            75% { transform: scale(0.9,1.03) translateX(-17px); }
+            100% { transform: scale(1,1) translateX(0); }
         }
     }
 

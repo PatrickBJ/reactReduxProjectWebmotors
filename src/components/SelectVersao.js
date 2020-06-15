@@ -5,10 +5,13 @@ const SelectVersao = (props) =>
 {
     const { versao, comboVersao } = props;
 
+    const disabledSelect = () => (comboVersao != null && comboVersao.length) ? "" : "disabled";
+    const disabledLabel = () => (comboVersao != null && comboVersao.length) ? null : {color: 'gray'};
+
     return(
         <div className="selectBox versao">
-        <label>Versão:</label>
-        <select value={versao} onChange={(e) => props.dispatch({type:"Versao", versao: e.target.value})}>
+        <label style={disabledLabel()}>Versão:</label>
+        <select value={versao} disabled={disabledSelect()} onChange={(e) => props.dispatch({type:"Versao", versao: e.target.value})}>
         {
             comboVersao != null && comboVersao.length > 0 ? comboVersao.map((i) => 
                 <option key={i.ID} value={i.ID}>{i.Name}</option>
