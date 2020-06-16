@@ -12,6 +12,7 @@ const SelectVersao = (props) =>
         <label>Versão:</label>
         <select value={versao} disabled={disabledSelect()} onChange={(e) => props.dispatch({type:"Versao", versao: e.target.value})}>
             <option disabled="disabled" key="-1" value="-1">Selecione...</option>
+            <option key="0" value="0">Todas</option>
             {
                 comboVersao != null && comboVersao.length > 0 ? comboVersao.map((i) => 
                     <option key={i.ID} value={i.ID}>{i.Name}</option>

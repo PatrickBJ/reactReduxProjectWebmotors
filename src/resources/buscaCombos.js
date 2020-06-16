@@ -3,9 +3,37 @@ import axios from 'axios'
 
 const comboMarca = async() => await client.get("Make?api_key=Model");
 
-const comboModelo = async(idMarca) => await client.get(`Model?MakeID=${idMarca}&api_key=Model`);
+const comboModelo = async (marcas) => {
+    let totalData = [];
 
-const comboVersao = async(idModelo) => await client.get(`Version?ModelID=${idModelo}&api_key=Model`);
+    const requests = marcas.map((id) => 
+        client.get(`Model?MakeID=${id}&api_key=Model`)
+    );
+
+    await axios.all(requests).then(axios.spread((...responses) => {
+        totalData = responses.reduce((total, {data}) => total = [...total, ...data], []);
+    })).catch(errors => {
+        throw errors;
+    })
+
+    return totalData;
+}
+
+const comboVersao = async(modelos) => {
+    let totalData = [];
+
+    const requests = modelos.map((id) => 
+        client.get(`Version?ModelID=${id}&api_key=Model`)
+    );
+
+    await axios.all(requests).then(axios.spread((...responses) => {
+        totalData = responses.reduce((total, {data}) => total = [...total, ...data], []);
+    })).catch(errors => {
+        throw errors;
+    })
+
+    return totalData;
+}
 
 //#region Combos fixos
 

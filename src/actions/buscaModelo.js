@@ -1,6 +1,6 @@
 import { comboModelo } from '../resources/buscaCombos';
 
-export const buscaModelo = (idMarca) => {
+export const buscaModelo = (idMarca, marcas) => {
     return async (dispatch) => {
         try{
             dispatch({type:"Marca", marca: idMarca});
@@ -8,7 +8,7 @@ export const buscaModelo = (idMarca) => {
             dispatch({type:"Versao", versao: -1});
             dispatch({type: "ComboVersao", comboVersao: []});
             
-            const {data} = await comboModelo(idMarca);
+            const data = await comboModelo(marcas);
 
             return dispatch({
                 type: "ComboModelo",
