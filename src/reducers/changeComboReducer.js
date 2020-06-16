@@ -1,4 +1,4 @@
-export const changeComboReducer = (initialState = { marca: 0, modelo: 0, versao: 0, local: 'São Paulo', raio:"10 Km" }, action) => {
+export const changeComboReducer = (initialState = { marca: -1, modelo: -1, versao: -1, local: 'São Paulo', raio:"10 Km" }, action) => {
     switch (action.type) {
         case "Marca":
             return { ...initialState, marca: action.marca }

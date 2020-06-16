@@ -1,7 +1,7 @@
 .inputLocalERaio {
     display: grid;
     background-color: white;
-    border: 1px solid #b83838;
+    border: 1px solid $global-gray-color;
     border-radius: 0.1rem;
     height: 2rem;
     font-size: 1rem;
@@ -35,6 +35,9 @@
         .local{
             padding: 0;
         }
+
+        @include global-font-bold;
+        @include global-value-style;
     }  
 
     .local{
@@ -47,24 +50,21 @@
         height: 2rem;
         align-self: center;
         padding: 0;
-        
-        label{
-            float: left;
-            align-self: center;
-            padding-left: 0.5rem;
-            flex-basis: 1;
-        }  
+
+        select{
+            @include global-value-style;
+        }
         
         @include global-select;
         
         @media (max-width: 499px) {
-            border: 1px solid #b83838;
+            border: 1px solid $global-gray-color;
             border-radius: 0.1rem;
             margin: -1px;
         }
         
         @media (min-width: 500px) {
-            border-left: 1px solid #b83838;
+            border-left: 1px solid $global-gray-color;
         }
     }
 
@@ -75,14 +75,12 @@
         grid-row-gap: 0.8rem;
         grid-template-areas:
             "icon span local"
-            "raio raio raio"
-            ;
+            "raio raio raio";
     }
     @media (min-width: 500px) {
         grid-template-columns: 20px 2rem repeat(6, 1fr);
         grid-template-rows: 2rem;
         grid-template-areas:
-            "icon span local local local local raio raio"
-            ;
+            "icon span local local local local raio raio";
     }
 }

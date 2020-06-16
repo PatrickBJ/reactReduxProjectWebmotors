@@ -2,21 +2,9 @@
 .selectBox {
     display: flex;
     background-color: white;
-    border: 1px solid #b83838;
+    border: 1px solid $global-gray-color;
     border-radius: 0.1rem;
     height: 1.8rem;
-    overflow-x:hidden;
-    
-    label{
-        float: left;
-        align-self: center;
-        padding-left: 0.5rem;
-        flex-basis: 1;
-    }  
-    
-    option{
-        overflow-x:hidden;
-    }
-    
+ 
     @include global-select;
 }

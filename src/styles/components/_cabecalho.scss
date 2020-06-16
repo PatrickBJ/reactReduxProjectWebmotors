@@ -4,7 +4,7 @@
     .animacao-hover{
         width: 150px;
         &:hover{
-            animation: hover-animation 2s forwards;
+            animation: hover-animation 2s infinite;
             @keyframes hover-animation {
                 100%{transform: translateY(0px);}
                 50%{transform: translateY(10px);}

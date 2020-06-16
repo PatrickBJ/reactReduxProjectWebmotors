@@ -3,6 +3,7 @@ body, html {
     
     >*{
         @include global-font;
+        color: $global-gray-color;
     }
 }
 

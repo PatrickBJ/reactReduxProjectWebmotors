@@ -3,7 +3,7 @@ import Carros, { CarroIcon, CarroText1, CarroText2 } from './Carros';
 import { MotoIcon, MotoText1, MotoText2 } from './Motos';
 import Button from '@material-ui/core/Button';
 
-const Abas = (props) =>
+const Abas = () =>
 {
     const [value, setValue] = React.useState(0);
 

@@ -8,6 +8,7 @@ body > *, html > * {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.00938em;
+  color: #969696;
 }
 
 body {
@@ -26,7 +27,7 @@ body {
   min-height: 200px;
   max-width: 933px;
   max-height: 312px;
-  background-color: #e7d2d2;
+  background-color: #f3f1f1;
   overflow: auto;
 }
 
@@ -39,8 +40,8 @@ body {
 }
 
 .cabecalho .animacao-hover:hover {
-  -webkit-animation: hover-animation 2s forwards;
-          animation: hover-animation 2s forwards;
+  -webkit-animation: hover-animation 2s infinite;
+          animation: hover-animation 2s infinite;
 }
 
 @-webkit-keyframes hover-animation {
@@ -169,10 +170,12 @@ body {
   display: grid;
   -ms-grid-rows: 2.5rem;
       grid-template-rows: 2.5rem;
+  background-color: #f3f1f1;
 }
 
 .tabs > * {
   cursor: pointer;
+  color: #969696;
 }
 
 .tabs button:focus {
@@ -189,10 +192,16 @@ body {
   grid-area: button2;
 }
 
+.tabs .tabs-button2 .icon {
+  width: 24px;
+  height: 24px;
+}
+
 .tabs .tabs-button3 {
   grid-area: button3;
   font-size: 0.7rem;
-  color: #a7a72d;
+  color: #fa7319;
+  text-transform: none;
 }
 
 @media (max-width: 499px) {
@@ -203,7 +212,7 @@ body {
 
 @media (min-width: 500px) {
   .tabs .tabs-button3 {
-    border: 2px solid #a7a72d;
+    border: 2px solid #fa7319;
     border-radius: 0.1rem;
     height: 1.7rem;
     -ms-flex-item-align: center;
@@ -223,8 +232,8 @@ body {
 
 @media (min-width: 500px) {
   .tabs {
-    -ms-grid-columns: 10rem 10rem 1fr 10rem;
-        grid-template-columns: 10rem 10rem 1fr 10rem;
+    -ms-grid-columns: 10rem 8rem 1fr 10rem;
+        grid-template-columns: 10rem 8rem 1fr 10rem;
         grid-template-areas: "button1 button2 . button3";
   }
 }
@@ -371,6 +380,15 @@ body {
   color: #e40a0a;
 }
 
+.form .busca-avancada .icon {
+  margin: 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 10px;
+  height: 10px;
+}
+
 .form .limpar-filtros {
   grid-area: limpar-filtros;
   -ms-flex-item-align: center;
@@ -423,7 +441,7 @@ body {
   display: -ms-grid;
   display: grid;
   background-color: white;
-  border: 1px solid #b83838;
+  border: 1px solid #969696;
   border-radius: 0.1rem;
   height: 2rem;
   font-size: 1rem;
@@ -467,6 +485,14 @@ body {
   padding-left: 0.5rem;
   -ms-flex-preferred-size: 1;
       flex-basis: 1;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  color: #b90101;
+  font-weight: bold;
 }
 
 .inputLocalERaio input .local {
@@ -486,16 +512,12 @@ body {
   -ms-flex-item-align: center;
       align-self: center;
   padding: 0;
+  overflow-x: hidden;
 }
 
-.inputLocalERaio .raio label {
-  float: left;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  padding-left: 0.5rem;
-  -ms-flex-preferred-size: 1;
-      flex-basis: 1;
+.inputLocalERaio .raio select {
+  color: #b90101;
+  font-weight: bold;
 }
 
 .inputLocalERaio .raio select {
@@ -510,24 +532,38 @@ body {
       -ms-flex-positive: 1;
           flex-grow: 1;
   margin: 0.1px;
+  overflow-x: hidden;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 0.8rem;
   font-weight: bold;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.00938em;
+  color: #b90101;
+  font-weight: bold;
 }
 
 .inputLocalERaio .raio select option {
   border: none;
   outline: none;
+  overflow-x: hidden;
   padding: 0.5rem;
   margin: 1rem;
 }
 
+.inputLocalERaio .raio label {
+  float: left;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-left: 0.5rem;
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
+}
+
 @media (max-width: 499px) {
   .inputLocalERaio .raio {
-    border: 1px solid #b83838;
+    border: 1px solid #969696;
     border-radius: 0.1rem;
     margin: -1px;
   }
@@ -535,7 +571,7 @@ body {
 
 @media (min-width: 500px) {
   .inputLocalERaio .raio {
-    border-left: 1px solid #b83838;
+    border-left: 1px solid #969696;
   }
 }
 
@@ -565,23 +601,9 @@ body {
   display: -ms-flexbox;
   display: flex;
   background-color: white;
-  border: 1px solid #b83838;
+  border: 1px solid #969696;
   border-radius: 0.1rem;
   height: 1.8rem;
-  overflow-x: hidden;
-}
-
-.selectBox label {
-  float: left;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  padding-left: 0.5rem;
-  -ms-flex-preferred-size: 1;
-      flex-basis: 1;
-}
-
-.selectBox option {
   overflow-x: hidden;
 }
 
@@ -597,18 +619,32 @@ body {
       -ms-flex-positive: 1;
           flex-grow: 1;
   margin: 0.1px;
+  overflow-x: hidden;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 0.8rem;
   font-weight: bold;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.00938em;
+  color: #b90101;
+  font-weight: bold;
 }
 
 .selectBox select option {
   border: none;
   outline: none;
+  overflow-x: hidden;
   padding: 0.5rem;
   margin: 1rem;
+}
+
+.selectBox label {
+  float: left;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-left: 0.5rem;
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
 }
 /*# sourceMappingURL=style.css.map */

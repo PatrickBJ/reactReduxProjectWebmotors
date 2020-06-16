@@ -1,9 +1,11 @@
 .tabs{
     display: grid;
     grid-template-rows: 2.5rem;
+    background-color: $global-background-color;
     
     > *{
         cursor: pointer;
+        color: $global-gray-color;
     }
 
     button{
@@ -19,17 +21,23 @@
     .tabs-button2{
         border: none;
         grid-area: button2;
+        
+        .icon{
+            width:24px;
+            height:24px;
+        }
     }
     .tabs-button3{
         grid-area: button3;
         font-size: 0.7rem;
-        color: rgb(167, 167, 45);
+        color: $global-orange-color;
+        text-transform: none;
         @media (max-width: 499px) {
             display: none;
         }
 
         @media (min-width: 500px) {
-            border: 2px solid rgb(167, 167, 45);
+            border: 2px solid $global-orange-color;
             border-radius: 0.1rem;
             height: 1.7rem;
             align-self: center;
@@ -44,7 +52,7 @@
     }
 
     @media (min-width: 500px) {
-        grid-template-columns: 10rem 10rem 1fr 10rem;
+        grid-template-columns: 10rem 8rem 1fr 10rem;
         grid-template-areas:
         "button1 button2 . button3"
     }
@@ -72,20 +80,20 @@
     }
     
    .span-1{
-            grid-area: span-1;
-            font-size: 0.5rem;
-            text-align: start;
-            align-self: flex-end;
-            left: 0;
-            bottom:0;
-        }
+        grid-area: span-1;
+        font-size: 0.5rem;
+        text-align: start;
+        align-self: flex-end;
+        left: 0;
+        bottom:0;
+    }
     .span-2{
-            grid-area: span-2;
-            font-size: 1rem;
-            text-align: start;
-            align-self: flex-start;
-            left: 0;
-        }
+        grid-area: span-2;
+        font-size: 1rem;
+        text-align: start;
+        align-self: flex-start;
+        left: 0;
+    }
 
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);

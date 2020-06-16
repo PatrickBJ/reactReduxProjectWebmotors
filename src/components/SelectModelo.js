@@ -14,11 +14,12 @@ const SelectModelo = (props) =>
         <div className="selectBox modelo">
         <label style={disabledLabel()}>Modelo:</label>
         <select value={modelo} disabled={disabledSelect()} onChange={(e) => buscaVersao(e.target.value)}>
-        {
-            comboModelo != null && comboModelo.length > 0 ? comboModelo.map((i) => 
-                <option key={i.ID} value={i.ID}>{i.Name}</option>
-            ) : []
-        }
+            <option disabled="disabled" key="-1" value="-1">Selecione...</option>
+            {
+                comboModelo != null && comboModelo.length > 0 ? comboModelo.map((i) => 
+                    <option key={i.ID} value={i.ID}>{i.Name}</option>
+                ) : []
+            }
         </select>
     </div>
     );

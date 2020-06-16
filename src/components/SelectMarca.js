@@ -8,17 +8,17 @@ const SelectMarca = (props) =>
     const { marca, comboMarca, buscaModelo } = props;
 
     const disabledSelect = () => (comboMarca != null && comboMarca.length) ? "" : "disabled";
-    const disabledLabel = () => (comboMarca != null && comboMarca.length) ? null : {color: 'gray'};
 
     return(
         <div className="selectBox marca">
-        <label style={disabledLabel()}>Marca:</label>
+        <label>Marca:</label>
         <select value={marca} disabled={disabledSelect()} onChange={(e) => buscaModelo(e.target.value)}>
-        {
-            comboMarca != null && comboMarca.length > 0 ? comboMarca.map((i) => 
-                <option key={i.ID} value={i.ID}>{i.Name}</option>
-            ) : []
-        }
+            <option disabled="disabled" key="-1" value="-1">Selecione...</option>
+            {
+                comboMarca != null && comboMarca.length > 0 ? comboMarca.map((i) => 
+                    <option key={i.ID} value={i.ID}>{i.Name}</option>
+                ) : []
+            }
         </select>
     </div>
     );

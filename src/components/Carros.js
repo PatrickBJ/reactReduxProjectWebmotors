@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { comboAno, comboPreco } from '../resources/buscaCombos';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { limpaFiltros } from '../actions/limpaFiltros';
 import InputLocalERaio from './InputLocalERaio';
 import SelectItem from './SelectItem';
 import SelectMarca from './SelectMarca';
@@ -12,7 +14,7 @@ import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import CarroIcon from '../assets/carro-icon.svg';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ArrowIcon from '../assets/arrow-icon.svg';
 
 const CarroText1 = "COMPRAR";
 const CarroText2 = "CARROS";
@@ -24,14 +26,12 @@ const Carros = (props) =>
     const [ano, setAno] = useState('2020');
     const [preco, setPreco] = useState("30 - 40");
 
+    const { limpaFiltros } = props;
+
     const limparFiltros = ()=>{
       setNovosckb(true);
       setUsadosckb(false);
-      props.dispatch({type:"Marca", marca: 0});
-      props.dispatch({type:"Modelo", modelo: 0});
-      props.dispatch({type:"Versao", versao: 0});
-      props.dispatch({type:"Local", local: ''});
-      props.dispatch({type:"Raio", raio: -1});
+      limpaFiltros();
       setAno(-1);
       setPreco(-1);
     }
@@ -58,7 +58,6 @@ const Carros = (props) =>
             }
             label="Usados"
           />
-
           <InputLocalERaio/>
           <SelectMarca/>
           <SelectModelo/>
@@ -67,7 +66,7 @@ const Carros = (props) =>
           <SelectVersao/>
 
           <Link className="busca-avancada">
-              <ChevronRightIcon />
+              <img className="icon" draggable="false" src={ArrowIcon}/>
               <p>Busca Avançada</p>
           </Link>
 
@@ -75,14 +74,14 @@ const Carros = (props) =>
             Limpar filtros
           </Link>
 
-          <Button className="ver-ofertas" variant="contained" color="secondary">
+          <Button style={{fontWeight: 'bold', fontSize: '0.8rem'}} className="ver-ofertas" variant="contained" color="secondary">
             Ver Ofertas
           </Button>
         </div>
     );
 }
-const mapStateToProps = ( {changeComboReducer : { marca }}) =>{
-  return { marca }
-}
-export default connect(mapStateToProps)(Carros);
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({ limpaFiltros }, dispatch);
+
+export default connect(null, mapDispatchToProps)(Carros);
 export { CarroIcon, CarroText1, CarroText2 }

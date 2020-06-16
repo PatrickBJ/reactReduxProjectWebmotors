@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../assets/webmotors-logo.svg';
 
-
 const Cabecalho = (props) =>
 {
     const [animacao, setAnimacao] = useState('animacao-inicial');

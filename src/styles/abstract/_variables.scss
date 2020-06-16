@@ -2,8 +2,10 @@ $global-max-width: 933px;
 $global-max-height: 312px;
 $global-min-width: 300px;
 $global-min-height: 200px;
-$global-background-color: rgb(231, 210, 210);
+$global-background-color: rgb(243, 241, 241);
 $global-red-color:#b90101;
+$global-orange-color:rgb(250, 115, 25);
+$global-gray-color:rgb(150, 150, 150);
 
 @mixin global-font {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -22,7 +24,13 @@ $global-red-color:#b90101;
     letter-spacing: 0.00938em;
 }
 
+@mixin global-value-style{
+    color: $global-red-color;
+    font-weight: bold;
+}
+
 @mixin global-select {
+    overflow-x:hidden;
     select{
         align-self: stretch;
         border: none;
@@ -30,13 +38,23 @@ $global-red-color:#b90101;
         flex-basis: 0;
         flex-grow: 1;
         margin:0.1px;
+        overflow-x:hidden;
         @include global-font-bold;
-
+        @include global-value-style;
+        
         option{
             border: none;
             outline: none;
+            overflow-x:hidden;
             padding: 0.5rem;
             margin: 1rem;
         }
     }
+
+    label{
+        float: left;
+        align-self: center;
+        padding-left: 0.5rem;
+        flex-basis: 1;
+    }  
 }

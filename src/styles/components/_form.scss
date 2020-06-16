@@ -50,6 +50,13 @@
         display:flex;
         align-items: center;
         color: rgb(228, 10, 10);
+
+        .icon{
+            margin:0;
+            align-self: center;
+            width:10px;
+            height:10px;
+        }
     }
     .limpar-filtros{
         grid-area: limpar-filtros;
