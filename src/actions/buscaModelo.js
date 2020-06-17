@@ -10,13 +10,21 @@ export const buscaModelo = (idMarca, marcas) => {
             
             const data = await comboModelo(marcas);
 
+            dispatch({
+                type:"RecarregarComboModelo",
+                recarregarComboModelo: data == null || data.length <=0
+            })
+
             return dispatch({
                 type: "ComboModelo",
                 comboModelo: data
             });
         }
         catch(error){
-            throw (error);
+            dispatch({
+                type:"RecarregarComboModelo",
+                recarregarComboModelo: true
+            })
         }
     };
 };
