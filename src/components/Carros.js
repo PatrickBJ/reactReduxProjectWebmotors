@@ -9,15 +9,20 @@ import SelectMarca from './SelectMarca';
 import SelectModelo from './SelectModelo';
 import SelectVersao from './SelectVersao';
 
-import Checkbox from '@material-ui/core/Checkbox';
-import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
+import { Checkbox, Button, Link, makeStyles, Backdrop, CircularProgress} from '@material-ui/core';
 import CarroIcon from '../assets/carro-icon.svg';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ArrowIcon from '../assets/arrow-icon.svg';
 
 const CarroText1 = "COMPRAR";
 const CarroText2 = "CARROS";
+
+const useStyles = makeStyles((theme) => ({
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
+}));
 
 const Carros = (props) =>
 {
@@ -26,7 +31,8 @@ const Carros = (props) =>
     const [ano, setAno] = useState('2020');
     const [preco, setPreco] = useState("30 - 40");
 
-    const { limpaFiltros } = props;
+    const { limpaFiltros, loading } = props;
+    const classes = useStyles();
 
     const limparFiltros = ()=>{
       setNovosckb(true);
@@ -77,11 +83,19 @@ const Carros = (props) =>
           <Button style={{fontWeight: 'bold', fontSize: '0.8rem'}} className="ver-ofertas" variant="contained" color="secondary">
             Ver Ofertas
           </Button>
+
+           <Backdrop className={classes.backdrop} open={loading}>
+              <CircularProgress color="inherit" />
+          </Backdrop>
         </div>
     );
 }
 
+const mapStateToProps = ( {comboReducer: { loading }}) =>{ 
+  return { loading }
+}
+
 const mapDispatchToProps = (dispatch) => bindActionCreators({ limpaFiltros }, dispatch);
 
-export default connect(null, mapDispatchToProps)(Carros);
+export default connect(mapStateToProps, mapDispatchToProps)(Carros);
 export { CarroIcon, CarroText1, CarroText2 }

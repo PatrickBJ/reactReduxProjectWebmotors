@@ -4,11 +4,10 @@ import { buscaModelo } from '../actions/buscaModelo';
 import { buscaMarca } from '../actions/buscaMarca';
 import { bindActionCreators } from 'redux';
 
-import Snackbar from '@material-ui/core/Snackbar';
-import Slide from '@material-ui/core/Slide';
-import IconButton from '@material-ui/core/IconButton';
+import { Snackbar, Slide, IconButton } from '@material-ui/core';
 import RefreshIcon from '@material-ui/icons/Refresh';
 
+ 
 const SelectMarca = (props) =>
 {
     const { marca, comboMarca, recarregarComboMarca, buscaMarca, buscaModelo } = props;
@@ -22,7 +21,7 @@ const SelectMarca = (props) =>
     //#region snackbar
     function SlideTransition(props) {
         return <Slide {...props} direction="down" />;
-    }
+    }      
     //#endregion
 
     return(
@@ -44,9 +43,9 @@ const SelectMarca = (props) =>
                 action={
                     <IconButton 
                         color="inherit"
-                        onClick={()=> buscaMarca()}
+                        onClick={()=> {buscaMarca()}}
                     >
-                        <RefreshIcon/>
+                    <RefreshIcon/>
                     </IconButton>
                 }
                 TransitionComponent={SlideTransition}

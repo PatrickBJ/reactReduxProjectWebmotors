@@ -7,6 +7,7 @@ export const comboReducer =
             recarregarComboModelo:false, 
             comboVersao:[],
             recarregarComboVersao:false, 
+            loading:true, 
         }, action
     ) => 
         {
@@ -23,6 +24,8 @@ export const comboReducer =
                     return { ...initialState, comboVersao: action.comboVersao }
                 case "RecarregarComboVersao":
                     return { ...initialState, recarregarComboVersao: action.recarregarComboVersao }
+                case "Loading":
+                    return { ...initialState, loading: action.loading }
                 default:
                     return initialState;
             }
